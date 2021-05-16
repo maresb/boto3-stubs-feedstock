@@ -6,4 +6,5 @@ from pkg_resources import require
 essential_service_names = ServiceName.ESSENTIAL
 
 for name in essential_service_names:
-    require("mypy_boto3_" + name)
+    res = require("mypy_boto3_" + name)
+    print("Service '" + name + "' provided by " + str(res) + ".")
