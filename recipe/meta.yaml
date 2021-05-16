@@ -13,18 +13,22 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+requirements:
+  host:
+    - pip
+    - python >=3.6
+  run:
+    - python >=3.6
 
 outputs:
   - name: boto3-stubs
     requirements:
-      host:
-        - pip
-        - python >=3.6
       run:
-        - python >=3.6
         - boto3
         - typing-extensions
+    build:
+      script:
+        - {{ PYTHON }} -m pip install . -vv
     test:
       script: run_test.py
       commands:
