@@ -15,11 +15,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12692&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/boto3-stubs-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12692&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/boto3-stubs-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12692&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/boto3-stubs-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12692&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/boto3-stubs-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12692&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/boto3-stubs-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -30,6 +63,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-boto3--stubs-green.svg)](https://anaconda.org/conda-forge/boto3-stubs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/boto3-stubs.svg)](https://anaconda.org/conda-forge/boto3-stubs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/boto3-stubs.svg)](https://anaconda.org/conda-forge/boto3-stubs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/boto3-stubs.svg)](https://anaconda.org/conda-forge/boto3-stubs) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-boto3--stubs--essential-green.svg)](https://anaconda.org/conda-forge/boto3-stubs-essential) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/boto3-stubs-essential.svg)](https://anaconda.org/conda-forge/boto3-stubs-essential) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/boto3-stubs-essential.svg)](https://anaconda.org/conda-forge/boto3-stubs-essential) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/boto3-stubs-essential.svg)](https://anaconda.org/conda-forge/boto3-stubs-essential) |
 
 Installing boto3-stubs
 ======================
@@ -41,10 +75,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `boto3-stubs` can be installed with:
+Once the `conda-forge` channel has been enabled, `boto3-stubs, boto3-stubs-essential` can be installed with:
 
 ```
-conda install boto3-stubs
+conda install boto3-stubs boto3-stubs-essential
 ```
 
 It is possible to list all of the versions of `boto3-stubs` available on your platform with:
