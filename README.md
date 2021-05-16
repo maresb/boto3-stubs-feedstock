@@ -152,7 +152,6 @@ Feedstock Maintainers
 =====================
 
 * [@maresb](https://github.com/maresb/)
-
-
-<!-- dummy commit to enable rerendering -->
+* [@thewchan](https://github.com/thewchan/)
+* [@vemel](https://github.com/vemel/)
 
