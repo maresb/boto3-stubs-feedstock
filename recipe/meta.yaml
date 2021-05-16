@@ -66,6 +66,7 @@ outputs:
       requires:
         - pip
         - mypy_boto3_builder
+        - md-toc >=7.2.0  # Delete this after https://github.com/conda-forge/mypy_boto3_builder-feedstock/pull/1 lands on CDN
   
 
 about:
