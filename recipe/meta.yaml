@@ -1,5 +1,5 @@
 {% set name = "boto3-stubs" %}
-{% set version = "1.17.73" %}
+{% set version = "1.17.74" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/boto3-stubs-{{ version }}.tar.gz
-  sha256: 13bd8edce76ca20533d74e129a938cdce0670c5c2702c7458036a2e2b6af77e9
+  sha256: 5c67b107322421c168fe294f274e8afa1333d646e356225a7cc3a73d58a1380b
 
 build:
-  number: 1
+  number: 0
   noarch: python
 requirements:
   host:
@@ -65,7 +65,7 @@ outputs:
         - pip check
       requires:
         - pip
-        - mypy_boto3_builder  
+        - mypy_boto3_builder
 
 about:
   home: https://github.com/vemel/mypy_boto3_builder
