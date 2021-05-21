@@ -25,10 +25,11 @@ outputs:
     requirements:
       run:
         - boto3
-        - typing-extensions
+        - typing_extensions
     build:
+      noarch: python
       script:
-        - {{ PYTHON }} -m pip install . -vv
+        - python -m pip install . -vv
     test:
       script: run_test.py
       commands:
@@ -38,9 +39,11 @@ outputs:
 
 
   - name: boto3-stubs-essential
+    build:
+      noarch: python
     requirements:
       run:
-        - {{ pin_subpackage("boto3-stubs", exact=True) }}
+        - {{ pin_subpackage(name, exact=True) }}
         - mypy_boto3_cloudformation={{ version }}
         - mypy_boto3_dynamodb={{ version }}
         - mypy_boto3_ec2={{ version }}
