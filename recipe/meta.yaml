@@ -18,8 +18,10 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - botocore >=1.20.103
     - python >=3.6
+    # Note: botocore is also an implicit dependency via mypy_boto3_* → boto3 → botocore,
+    # so the following line is redundant.
+    - botocore
 
 outputs:
   - name: boto3-stubs
