@@ -1,5 +1,5 @@
 {% set name = "boto3-stubs" %}
-{% set version = "1.17.106" %}
+{% set version = "1.17.107" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/boto3-stubs-{{ version }}.tar.gz
-  sha256: 3cade7f8df4c2d15b9d5c47a9753e19165dab1946e49647b47800c216db2ac03
+  sha256: 6ac42c07f351707f3b8d9e631defde7a5cd96d2075b19479f5b188f15fc68e39
 
 build:
   number: 0
@@ -18,8 +18,10 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - botocore >=1.20.103
     - python >=3.6
+    # Note: botocore is also an implicit dependency via mypy_boto3_* → boto3 → botocore,
+    # so the following line is redundant.
+    - botocore
 
 outputs:
   - name: boto3-stubs
