@@ -1,5 +1,5 @@
 {% set name = "boto3-stubs" %}
-{% set version = "1.17.77" %}
+{% set version = "1.17.110" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/boto3-stubs-{{ version }}.tar.gz
-  sha256: ab0acf8ac9534e097cb33b4c7a15cc3d211c34d3c4b861b89e3962680c613665
+  sha256: 0652adf9fd896f50936287a14454a924c34ad6aa826b1b96668bd7e8165e8ba1
 
 build:
   number: 0
@@ -19,16 +19,20 @@ requirements:
     - python >=3.6
   run:
     - python >=3.6
+    # Note: botocore is also an implicit dependency via mypy_boto3_* → boto3 → botocore,
+    # so the following line is redundant.
+    - botocore
 
 outputs:
   - name: boto3-stubs
     requirements:
       run:
         - boto3
-        - typing-extensions
+        - typing_extensions
     build:
+      noarch: python
       script:
-        - {{ PYTHON }} -m pip install . -vv
+        - python -m pip install . -vv
     test:
       script: run_test.py
       commands:
@@ -38,12 +42,11 @@ outputs:
 
 
   - name: boto3-stubs-essential
+    build:
+      noarch: python
     requirements:
-      host:
-        - python >=3.6
       run:
-        - python >=3.6
-        - {{ pin_subpackage("boto3-stubs", exact=True) }}
+        - {{ pin_subpackage(name, exact=True) }}
         - mypy_boto3_cloudformation >={{ ".".join(version.split(".")[:-1] + [str(max(0, int(version.split(".")[-1]) - 5))]) }}
         - mypy_boto3_dynamodb={{ version }}
         - mypy_boto3_ec2={{ version }}
