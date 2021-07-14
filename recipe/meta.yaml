@@ -13,7 +13,7 @@ source:
   sha256: 8feefbca47308df2fa1e6ee6cf9bdc961538867eb09fea3b2977bf13a9c104e9
 
 build:
-  number: 0
+  number: 1
   noarch: python
 requirements:
   host:
@@ -50,12 +50,12 @@ outputs:
       run:
         - {{ pin_subpackage(name, exact=True) }}
         - mypy_boto3_cloudformation >={{ version_minus_five }}
-        - mypy_boto3_dynamodb={{ version_minus_five }}
-        - mypy_boto3_ec2={{ version_minus_five }}
-        - mypy_boto3_lambda={{ version_minus_five }}
-        - mypy_boto3_rds={{ version_minus_five }}
-        - mypy-boto3-s3={{ version_minus_five }}
-        - mypy_boto3_sqs={{ version_minus_five }}
+        - mypy_boto3_dynamodb >={{ version_minus_five }}
+        - mypy_boto3_ec2 >={{ version_minus_five }}
+        - mypy_boto3_lambda >={{ version_minus_five }}
+        - mypy_boto3_rds >={{ version_minus_five }}
+        - mypy-boto3-s3 >={{ version_minus_five }}
+        - mypy_boto3_sqs >={{ version_minus_five }}
     test:
       script: test_essential.py
       imports:
