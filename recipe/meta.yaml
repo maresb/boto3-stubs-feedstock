@@ -44,7 +44,7 @@ outputs:
       run:
         - python >=3.6
         - {{ pin_subpackage("boto3-stubs", exact=True) }}
-        - mypy_boto3_cloudformation={{ version }}
+        - mypy_boto3_cloudformation >={{ ".".join(version.split(".")[:-1] + [str(max(0, int(version.split(".")[-1]) - 5))]) }}
         - mypy_boto3_dynamodb={{ version }}
         - mypy_boto3_ec2={{ version }}
         - mypy_boto3_lambda={{ version }}
